@@ -17,7 +17,7 @@ If we used **constrast** and **homogeneity** as our feature vector.
 3. All 9 Fonts
     ![All Fonts](./Illustrations/2_allvall.png "All Fonts")
 
-If we added vertical projection profile mean (VPP Mean) feature to our feature vector
+If we added **vertical projection profile mean (VPP Mean)** feature to our feature vector
 ![All Fonts](./Illustrations/3_allvall.png "All Fonts")
 
 If we added preprocessing to the image and converting it to binary image with a threshold.
