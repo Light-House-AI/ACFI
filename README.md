@@ -54,7 +54,7 @@ The system is evaluated on the results accuracy and the inference time. With an 
 │
 ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
 │                         the creators initials, and a short `-` delimited description, e.g.
-│                         `01-jqp-initial-data-exploration`.
+│                         `01-data-exploration`.
 │
 ├── src                <- Source code to build and evaluate models.
 │   │
