@@ -38,17 +38,19 @@ def preprocess_image(image):
     '''
     Applies thresholding and color correction to the image.
     '''
+    # apply thresholding
     gray_scale_image = rgb2gray(image)
     binary_image = gray_scale_image > threshold_otsu(gray_scale_image)
 
-    rows, columns = binary_image.shape
-    rows -= 1
-    columns -= 1
+    # get corner pixels
+    height, width = binary_image.shape
+    frame_pixels = np.concatenate((binary_image[0, 0:width-1],
+                                   binary_image[0:height-1, 0],
+                                   binary_image[height-1, 0:width-1],
+                                   binary_image[0:height-1, width-1]))
 
-    corners = [binary_image[0, 0], binary_image[0, columns],
-               binary_image[rows, 0], binary_image[rows, columns]]
-
-    if np.argmax(np.bincount(corners)) == 1:
+    # invert the image if the corner pixels are black
+    if np.argmax(np.bincount(frame_pixels)) == 0:
         binary_image = np.invert(binary_image)
 
     return binary_image
