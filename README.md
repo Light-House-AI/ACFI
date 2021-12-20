@@ -19,8 +19,9 @@ pip install -r requirements.txt
 
 ### Run
 
-```
-python main.py --data_dir=data/ --model_dir=models/ --output_dir=output/
+```bash
+# run cli program to identify fonts in image batch
+python cli/main.py --data_dir=data/ --model_dir=models/ --output_dir=output/
 ```
 
 The results are two files:
@@ -28,13 +29,23 @@ The results are two files:
 - `output/results.txt`: contains the results of the evaluation.
 - `output/time.txt`: contains the inference time for each result. The time is in seconds and rounded to two decimal places.
 
+### Run individual modules
+
+```bash
+# data preprocessing pipeline
+python src\data\pipeline.py --input_dir=./data/raw/ --output_dir=./data/processed/
+
+# use --help for any module to get optional flags
+python src\data\pipeline.py --help for optional flags
+```
+
 ## Evaluation criteria
 
 The system is evaluated on the results accuracy and the inference time. With an emphasis on the accuracy.
 
 ## System modules
 
-- [ ] Pre-processing Module.
+- [x] Pre-processing Module.
 - [ ] Feature Extraction Module.
 - [ ] Model Selection and Training Module.
 - [ ] Performance Analysis Module.
@@ -60,7 +71,7 @@ The system is evaluated on the results accuracy and the inference time. With an 
 │   │
 │   ├── data
 │   │   ├── preprocess_data.py  <- Pre-processing module.
-│   │   └── split_data.py       <- Splitting module.
+│   │   └── pipeline.py         <- Data preprocessing pipeline with cli interface.
 │   │
 │   ├── features
 │   │   └──  build_features.py   <- Feature extraction module.
