@@ -21,22 +21,19 @@ pip install -r requirements.txt
 
 ```bash
 # run cli program to identify fonts in image batch
-python cli/main.py --data_dir=data/ --model_dir=models/ --output_dir=output/
+python src/inference/predict.py --test_directory=<FULL PATH> --output_directory=<FULL PATH> --verbose=<OPTIONAL>
 ```
 
 The results are two files:
 
 - `output/results.txt`: contains the results of the evaluation.
-- `output/time.txt`: contains the inference time for each result. The time is in seconds and rounded to two decimal places.
+- `output/time.txt`: contains the inference time for each result. The time is in seconds.
 
-### Run individual modules
+### Train new model
 
 ```bash
-# data preprocessing pipeline
-python src\data\pipeline.py --input_dir=./data/raw/ --output_dir=./data/processed/
-
-# use --help for any module to get optional flags
-python src\data\pipeline.py --help for optional flags
+# run cli program to train and save model with name model.sav
+python src/models/train_model.py --training_directory=<FULL PATH> --output_directory=<FULL PATH> --verbose=<OPTIONAL>
 ```
 
 ## Evaluation criteria
@@ -46,15 +43,11 @@ The system is evaluated on the results accuracy and the inference time. With an 
 ## System modules
 
 - [x] Pre-processing Module.
-- [ ] Feature Extraction Module.
-- [ ] Model Selection and Training Module.
-- [ ] Performance Analysis Module.
+- [x] Feature Extraction Module.
+- [x] Model Selection and Training Module.
+- [x] Performance Analysis Module.
 
 **Note** The project is limited only to classical machine learning methods such as _Bayesian Classifiers_, _KNN_, _Linear/Logistic Regression_, Neural Networks (with two hidden layers as a maximum), _Support Vector Machines_, _Principal Component Analysis_, etc.
-
-## System pipeline
-
-**TODO**
 
 ## Project structure
 
@@ -77,14 +70,14 @@ The system is evaluated on the results accuracy and the inference time. With an 
 │   │   └──  build_features.py   <- Feature extraction module.
 │   │
 │   ├── models
-│   │   └── train_svm.py        <- Model training module.
+│   │   └── train_model.py        <- Model training module.
 │   │
 │   ├── evaluation
 │   │   ├── choose_model.py     <- Script to choose the best model.
 │   │   └── evaluate_model.py   <- Script to evaluate the best model.
 │   │
 │   ├── inference
-│   │   └── predict_model.py    <- Script to predict the results.
+│   │   └── predict.py    <- Script to predict the results.
 │   │
 │   └── visualization
 │       └── visualize.py        <- Script to visualize the results.
