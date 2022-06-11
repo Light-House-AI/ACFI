@@ -96,9 +96,9 @@ We used the [ACdb](https://drive.google.com/file/d/1dC7pwzT_RHL9B42H8-Nzf5Sant-8
 
 ## Research Papers
 
-**Note that** you don't need to open all research papers. From the following papers, they gave us a hint of which features to extract from an image to have the ability to identify fonts.
+**Note that** you don't need to open all research papers. From the following papers, they gave us a hint of which features to extract from an image to have the ability to identify fonts. Each research paper was implemented in separate python notebook in `notebooks/`.
 
-1. [Local Binary Patterns for Arabic Optical Font Recognition](https://www.researchgate.net/publication/286595227_Local_Binary_Patterns_for_Arabic_Optical_Font_Recognition)
-2. [Font Recognition Based on Global Texture Analysis](http://www.cbsr.ia.ac.cn/publications/yzhu/Font%20Recognition%20Based%20on%20Global%20Texture%20Analysis.pdf)
-3. [Large-Scale Visual Font Recognition](https://openaccess.thecvf.com/content_cvpr_2014/papers/Chen_Large-Scale_Visual_Font_2014_CVPR_paper.pdf)
-4. [A Statistical Global Feature Extraction Method for Optical Font Recognition](https://link.springer.com/content/pdf/10.1007%2F978-3-642-20039-7_26.pdf)
+1. [A Statistical Global Feature Extraction Method for Optical Font Recognition](https://link.springer.com/content/pdf/10.1007%2F978-3-642-20039-7_26.pdf)
+2. [A New Computational Method for Arabic Calligraphy Style Representation and Classification](https://www.mdpi.com/2076-3417/11/11/4852/htm)
+3. [An efficient multiple-classifier system for Arabic calligraphy style recognition](https://ieeexplore.ieee.org/document/8807829)
+4. [Arabic Artistic Script Style Identification UsingTexture Descriptors](https://ieeexplore.ieee.org/abstract/document/9151569)
